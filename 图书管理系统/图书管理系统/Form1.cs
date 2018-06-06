@@ -33,7 +33,7 @@ namespace 图书管理系统
             SqlConnection conn = new SqlConnection(str);
 
 
-            SqlCommand MyCommand = new SqlCommand("SELECT 密码 FROM Users WHERE 账号='"+str1+"'", conn); //定义一个数据库操作指令
+            SqlCommand MyCommand = new SqlCommand("SELECT 密码,类型 FROM Users WHERE 账号='"+str1+"'", conn); //定义一个数据库操作指令
             SqlDataAdapter SelectAdapter = new SqlDataAdapter();//定义一个数据适配器
             SelectAdapter.SelectCommand = MyCommand;//定义数据适配器的操作指令
             DataSet MyDataSet = new DataSet();//定义一个数据集
@@ -47,17 +47,29 @@ namespace 图书管理系统
 
             DataTable table = MyDataSet.Tables[0]; //查询第一张表
             int flag = 0;
-            MessageBox.Show(table.Columns.Count + "  " + table.Columns.Count);
+            MessageBox.Show(table.Rows.Count + "AAAAA" + table.Columns.Count);
             for (int i = 0; i < table.Rows.Count; i++)  //遍历每一行,DataTable包含若干个行
             {
                 DataRow row = table.Rows[i];    //遍历每一行,得到每一行的内容
                 //  MessageBox.Show(table.Columns.Count.ToString());
+
+                flag=1;
                 for (int j = 0; j < table.Columns.Count; j++) {//遍历row的列
-                    if (row[j].ToString().Trim() == str2) flag = 1;
-                    else flag = 2;
-                }    
+                    MessageBox.Show(row[j].ToString().Trim());
+                    if(j==0){
+                        if(row[j].ToString().Trim() == str2.Trim()) ;
+                        else flag = 2;
+                    }
+                    if (j == 1) {
+                        if (row[j].ToString().Trim() ==user_flag.ToString())  ;
+                        else flag = 3;
+                    }
+                    
+                }
+                //if (j != 2 && flag != 3)
+                //    flag = 1;
              }
-            MessageBox.Show(flag.ToString());
+           // MessageBox.Show(flag.ToString());
             if (flag == 1)
             {
                 str1 = textBox1.Text.ToString();
@@ -77,6 +89,9 @@ namespace 图书管理系统
             else if (flag == 0) {
                 MessageBox.Show("账号不存在，请重新输入!");
             }
+            else if (flag == 3) {
+                MessageBox.Show("类型错误，请重新选择!");
+            }
              
         }
 
@@ -87,9 +102,26 @@ namespace 图书管理系统
 
             Form4__用户登录 f4 = new Form4__用户登录(str1);
             f4.Show();*/
-            Form3 f3 = new Form3(this);
+           /* Form3 f3 = new Form3(this);
             f3.Show();
-            this.Hide();
+            this.Hide();*/
+            string str = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=zpjsb;Integrated Security=True";
+            SqlConnection conn = new SqlConnection(str);
+            conn.Open();//打开数据库连接
+            str1 = textBox1.Text.ToString();
+            str2 = textBox2.Text.ToString();
+            StringBuilder sql = new StringBuilder("select * from Users");
+            List<string> wheres = new List<string>();
+                wheres.Add("用户名=" + str1);
+                wheres.Add("密码=" +str2);
+                wheres.Add("类型="+user_flag);
+            //判断用户是否选择了条件
+            if (wheres.Count > 0)
+            {
+               // string wh = string.Join(" and ", wheres.ToArray());
+                //sql.Append(" where " + wh);
+                MessageBox.Show("成功了"+user_flag+str1+str2);
+            }
         }
 
         private void 用户_CheckedChanged(object sender, EventArgs e)
