@@ -20,6 +20,8 @@ namespace 图书管理系统
         {
             InitializeComponent();
             this.BackgroundImage=Image.FromFile("C:\\Users\\ZCZ\\Desktop\\杂七杂八\\1.jpg");
+            string dt = System.DateTime.Now.ToString();
+            MessageBox.Show(dt);
         }
 
         private void 登录_Click(object sender, EventArgs e)

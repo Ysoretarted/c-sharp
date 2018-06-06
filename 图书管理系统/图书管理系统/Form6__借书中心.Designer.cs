@@ -37,6 +37,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.借书 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -108,7 +109,6 @@
             // 
             // listView1
             // 
-            this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.listView1.Location = new System.Drawing.Point(25, 149);
@@ -118,11 +118,22 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // 借书
+            // 
+            this.借书.Location = new System.Drawing.Point(471, 87);
+            this.借书.Name = "借书";
+            this.借书.Size = new System.Drawing.Size(75, 23);
+            this.借书.TabIndex = 8;
+            this.借书.Text = "确定借书";
+            this.借书.UseVisualStyleBackColor = true;
+            this.借书.Click += new System.EventHandler(this.借书_Click);
+            // 
             // Form6__借书中心
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 435);
+            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.借书);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
@@ -151,5 +162,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button 借书;
     }
 }

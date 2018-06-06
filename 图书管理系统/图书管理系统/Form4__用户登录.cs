@@ -87,8 +87,8 @@ namespace 图书管理系统
 
         private void 借阅_Click(object sender, EventArgs e)
         {
-            //Form8__借阅记录 f8 = new Form8__借阅记录(登录用户.Text.ToString().Trim());
-           // f8.Show();
+            Form8__借阅记录 f8 = new Form8__借阅记录(登录用户.Text.ToString().Trim(),this);
+            f8.Show();
             this.Hide();
         }
 

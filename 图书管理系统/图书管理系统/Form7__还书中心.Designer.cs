@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -52,11 +53,20 @@
             this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
             this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(13, 49);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(441, 307);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Form7__还书中心
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 388);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form7__还书中心";
@@ -71,5 +81,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListView listView1;
     }
 }
