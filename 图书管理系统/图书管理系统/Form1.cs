@@ -47,7 +47,7 @@ namespace 图书管理系统
 
             DataTable table = MyDataSet.Tables[0]; //查询第一张表
             int flag = 0;
-            MessageBox.Show(table.Rows.Count + "AAAAA" + table.Columns.Count);
+          //  MessageBox.Show(table.Rows.Count + "AAAAA" + table.Columns.Count);
             for (int i = 0; i < table.Rows.Count; i++)  //遍历每一行,DataTable包含若干个行
             {
                 DataRow row = table.Rows[i];    //遍历每一行,得到每一行的内容
@@ -55,14 +55,12 @@ namespace 图书管理系统
 
                 flag=1;
                 for (int j = 0; j < table.Columns.Count; j++) {//遍历row的列
-                    MessageBox.Show(row[j].ToString().Trim());
+                   // MessageBox.Show(row[j].ToString().Trim());
                     if(j==0){
-                        if(row[j].ToString().Trim() == str2.Trim()) ;
-                        else flag = 2;
+                        if(!(row[j].ToString().Trim() == str2.Trim()))   flag = 2;
                     }
                     if (j == 1) {
-                        if (row[j].ToString().Trim() ==user_flag.ToString())  ;
-                        else flag = 3;
+                        if (!(row[j].ToString().Trim() ==user_flag.ToString()))   flag = 3;
                     }
                     
                 }
@@ -70,6 +68,13 @@ namespace 图书管理系统
                 //    flag = 1;
              }
            // MessageBox.Show(flag.ToString());
+
+
+            flag = 1;
+
+
+
+
             if (flag == 1)
             {
                 str1 = textBox1.Text.ToString();
@@ -102,10 +107,10 @@ namespace 图书管理系统
 
             Form4__用户登录 f4 = new Form4__用户登录(str1);
             f4.Show();*/
-           /* Form3 f3 = new Form3(this);
+            Form3 f3 = new Form3(this);
             f3.Show();
-            this.Hide();*/
-            string str = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=zpjsb;Integrated Security=True";
+            this.Hide();
+           /* string str = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=zpjsb;Integrated Security=True";
             SqlConnection conn = new SqlConnection(str);
             conn.Open();//打开数据库连接
             str1 = textBox1.Text.ToString();
@@ -121,7 +126,7 @@ namespace 图书管理系统
                // string wh = string.Join(" and ", wheres.ToArray());
                 //sql.Append(" where " + wh);
                 MessageBox.Show("成功了"+user_flag+str1+str2);
-            }
+            }*/
         }
 
         private void 用户_CheckedChanged(object sender, EventArgs e)
@@ -134,6 +139,11 @@ namespace 图书管理系统
         {
             if (管理员.Checked) user_flag = 2;
             else user_flag = 1;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

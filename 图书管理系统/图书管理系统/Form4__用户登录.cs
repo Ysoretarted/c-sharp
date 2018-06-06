@@ -17,7 +17,7 @@ namespace 图书管理系统
         {
             InitializeComponent();
             this.str1 = a;
-            MessageBox.Show(str1);
+           // MessageBox.Show(str1);
             登录用户.Text = str1;
             this.lastform = f;
          }
@@ -68,6 +68,28 @@ namespace 图书管理系统
         private void 登录用户_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Arrow;
+        }
+
+        private void 借书_Click(object sender, EventArgs e)
+        {
+            Form6__借书中心 f6 = new Form6__借书中心(登录用户.Text.ToString().Trim());
+            f6.Show();
+            this.Hide();
+        }
+
+        private void 还书_Click(object sender, EventArgs e)
+        {
+           //Form7__还书中心 f7 = new Form7__还书中心(登录用户.Text.ToString().Trim());
+            //f7.Show();
+            this.Hide();
+        }
+
+
+        private void 借阅_Click(object sender, EventArgs e)
+        {
+            //Form8__借阅记录 f8 = new Form8__借阅记录(登录用户.Text.ToString().Trim());
+           // f8.Show();
+            this.Hide();
         }
 
 

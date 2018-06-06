@@ -10,3 +10,6 @@ C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书
 C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form3.resources
 C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form4__用户登录.resources
 C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form5__管理员登入.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form6__借书中心.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form7__还书中心.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form8__借阅记录.resources

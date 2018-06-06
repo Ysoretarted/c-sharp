@@ -142,6 +142,7 @@
             this.Controls.Add(this.账号);
             this.Name = "Form1";
             this.Text = "图书管理系统--请登录";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
