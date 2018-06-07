@@ -16,7 +16,7 @@ namespace 图书管理系统
         public Form5__管理员登入(string a,Form f)
         {
             InitializeComponent();
-            管理员登入.Text = a;
+            管理员登入.Text = Form1.ID;
             lastform = f;
         }
 

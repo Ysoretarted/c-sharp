@@ -16,13 +16,13 @@ namespace 图书管理系统
         {
             InitializeComponent();
             this.lastform = f;
+        //    MessageBox.Show(Form1.ID);
+          //  Form1.ID = "aaaa";
+          //  MessageBox.Show(Form1.ID);
         }
         int flag = 1;//注册账号类型
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //this.Close();
-          //  Form1 f1 = new Form1();
-            //f1.Show();
             Application.Exit();
         }
 
@@ -114,6 +114,11 @@ namespace 图书管理系统
         {
             lastform.Show();
             this.Hide();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

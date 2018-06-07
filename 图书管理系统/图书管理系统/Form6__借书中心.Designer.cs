@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.借书 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 90);
+            this.label4.Location = new System.Drawing.Point(14, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 12);
             this.label4.TabIndex = 3;
@@ -83,16 +84,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(369, 85);
+            this.button1.Location = new System.Drawing.Point(292, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "查询";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(192, 87);
+            this.textBox1.Location = new System.Drawing.Point(133, 87);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 21);
             this.textBox1.TabIndex = 5;
@@ -110,17 +112,17 @@
             // listView1
             // 
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(25, 149);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(531, 274);
+            this.listView1.Size = new System.Drawing.Size(521, 289);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // 借书
             // 
-            this.借书.Location = new System.Drawing.Point(471, 87);
+            this.借书.Location = new System.Drawing.Point(385, 85);
             this.借书.Name = "借书";
             this.借书.Size = new System.Drawing.Size(75, 23);
             this.借书.TabIndex = 8;
@@ -128,11 +130,22 @@
             this.借书.UseVisualStyleBackColor = true;
             this.借书.Click += new System.EventHandler(this.借书_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(471, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "返回";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form6__借书中心
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 461);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.借书);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label5);
@@ -163,5 +176,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button 借书;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -13,20 +13,22 @@ namespace 图书管理系统
 {
     public partial class Form1 : Form
     {
-        string str1 = "";
+
+        public static string ID=null;
         string str2 = "";
         int user_flag = 1;
         public Form1()
         {
             InitializeComponent();
             this.BackgroundImage=Image.FromFile("C:\\Users\\ZCZ\\Desktop\\杂七杂八\\1.jpg");
-            string dt = System.DateTime.Now.ToString();
-            MessageBox.Show(dt);
+         //   string dt = System.DateTime.Now.ToString();
+          //  MessageBox.Show(dt);
+           // progress_pas.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
         }
 
         private void 登录_Click(object sender, EventArgs e)
         {
-            str1=textBox1.Text.ToString();
+            ID=textBox1.Text.ToString();
             str2=textBox2.Text.ToString();
             //数据库连接字符串（引号中的字符串为之前复制的那段字符）  
             //Data source=服务器名，Initial catalog=数据库名，User Id=sqlserver连接名，  
@@ -35,7 +37,7 @@ namespace 图书管理系统
             SqlConnection conn = new SqlConnection(str);
 
 
-            SqlCommand MyCommand = new SqlCommand("SELECT 密码,类型 FROM Users WHERE 账号='"+str1+"'", conn); //定义一个数据库操作指令
+            SqlCommand MyCommand = new SqlCommand("SELECT 密码,类型 FROM Users WHERE 账号='"+ID+"'", conn); //定义一个数据库操作指令
             SqlDataAdapter SelectAdapter = new SqlDataAdapter();//定义一个数据适配器
             SelectAdapter.SelectCommand = MyCommand;//定义数据适配器的操作指令
             DataSet MyDataSet = new DataSet();//定义一个数据集
@@ -79,13 +81,12 @@ namespace 图书管理系统
 
             if (flag == 1)
             {
-                str1 = textBox1.Text.ToString();
                 if (user_flag == 1) {
-                Form4__用户登录 f4 = new Form4__用户登录(str1,this);
+                Form4__用户登录 f4 = new Form4__用户登录(ID,this);
                 f4.Show();
                 }
                 else if (user_flag == 2) {
-                    Form5__管理员登入 f5 = new Form5__管理员登入(str1,this);
+                    Form5__管理员登入 f5 = new Form5__管理员登入(ID,this);
                     f5.Show();
                 }
                 this.Hide();

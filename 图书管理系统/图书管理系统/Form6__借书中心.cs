@@ -18,9 +18,9 @@ namespace 图书管理系统
 {
     public partial class Form6__借书中心 : Form
     {
-        //Form4__用户登录 lastform;
+        Form4__用户登录 lastform;
         string bookid="";
-        string id = "";
+        //string id = "";
         int a=-1;
         string add1=null, add2=null, add3=null, add4=null, add5=null, add6=null;
         private void init(){
@@ -73,11 +73,12 @@ namespace 图书管理系统
             this.listView1.EndUpdate();
 
         }
-        public Form6__借书中心(string a)
+        public Form6__借书中心(string a,Form4__用户登录 f)
         {
             InitializeComponent();
-            label2.Text = a;
-            id = a;
+            label2.Text = Form1.ID;
+            lastform = f;
+          //  id = a;
           //  init();
 
         }
@@ -166,7 +167,7 @@ namespace 图书管理系统
                             add5=System.DateTime.Now.ToString();
                             add6=System.DateTime.Now.AddDays(60).ToString();
                             MessageBox.Show(add5+"   "+add6);
-                            SqlCommand cmd1 = new SqlCommand("INSERT INTO Rent_books(账号,书籍序列号,书名,作者,出版社,借书日期,到期日期)VALUES('" + id + "','" + add1 + "','" + add2 + "','" + add3 + "','" + add4 + "','" + add5 + "','" + add6 + "')", conn);
+                            SqlCommand cmd1 = new SqlCommand("INSERT INTO Rent_books(账号,书籍序列号,书名,作者,出版社,借书日期,到期日期)VALUES('" + Form1.ID + "','" + add1 + "','" + add2 + "','" + add3 + "','" + add4 + "','" + add5 + "','" + add6 + "')", conn);
                             // cmd.ExecuteNonQuery();
                             try
                             {
@@ -202,6 +203,17 @@ namespace 图书管理系统
                 }
             }
            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lastform.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

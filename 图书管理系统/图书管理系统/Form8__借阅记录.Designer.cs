@@ -72,6 +72,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "返回";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form8__借阅记录
             // 
@@ -85,6 +86,7 @@
             this.Name = "Form8__借阅记录";
             this.Text = "Form8__借阅记录";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form8__借阅记录_FormClosed);
+            this.Load += new System.EventHandler(this.Form8__借阅记录_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

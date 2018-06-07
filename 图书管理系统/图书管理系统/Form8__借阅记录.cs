@@ -11,7 +11,7 @@ namespace 图书管理系统
 {
     public partial class Form8__借阅记录 : Form
     {
-        string id = null;
+       // string id = null;
         Form4__用户登录 lastform;
         private void init() {
             this.listView1.Columns.Add("书籍序列号", 60, HorizontalAlignment.Left);
@@ -31,7 +31,7 @@ namespace 图书管理系统
 
 
             //多条件查询
-            SqlCommand MyCommand = new SqlCommand("SELECT 书籍序列号,书名,作者,出版社,借书日期,到期日期,状态 FROM Rent_books where 账号='"+id+"'", conn); //定义一个数据库操作指令
+            SqlCommand MyCommand = new SqlCommand("SELECT 书籍序列号,书名,作者,出版社,借书日期,到期日期,状态 FROM Rent_books where 账号='" + Form1.ID + "'", conn); //定义一个数据库操作指令
             SqlDataAdapter SelectAdapter = new SqlDataAdapter();//定义一个数据适配器
             SelectAdapter.SelectCommand = MyCommand;//定义数据适配器的操作指令
             DataSet MyDataSet = new DataSet();//定义一个数据集
@@ -65,9 +65,9 @@ namespace 图书管理系统
         public Form8__借阅记录(string a,Form4__用户登录 f)
         {
             InitializeComponent();
-            id = a;
+           // id = a;
             init();
-            label2.Text = a;
+            label2.Text = Form1.ID;
             this.lastform = f;
         }
 
@@ -89,6 +89,17 @@ namespace 图书管理系统
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form8__借阅记录_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            lastform.Show();
+            this.Hide();
         }
     }
 }

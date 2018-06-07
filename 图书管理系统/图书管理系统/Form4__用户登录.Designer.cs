@@ -38,6 +38,8 @@
             this.借书 = new System.Windows.Forms.Button();
             this.还书 = new System.Windows.Forms.Button();
             this.借阅 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,11 +126,26 @@
             this.借阅.UseVisualStyleBackColor = true;
             this.借阅.Click += new System.EventHandler(this.借阅_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(334, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "返回";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form4__用户登录
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.借阅);
             this.Controls.Add(this.还书);
             this.Controls.Add(this.借书);
@@ -154,6 +171,8 @@
         private System.Windows.Forms.Button 借书;
         private System.Windows.Forms.Button 还书;
         private System.Windows.Forms.Button 借阅;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }
