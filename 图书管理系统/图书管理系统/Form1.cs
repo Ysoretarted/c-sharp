@@ -20,7 +20,7 @@ namespace 图书管理系统
         public Form1()
         {
             InitializeComponent();
-            this.BackgroundImage=Image.FromFile("C:\\Users\\ZCZ\\Desktop\\杂七杂八\\1.jpg");
+            this.BackgroundImage=Image.FromFile("C:\\Users\\ZCZ\\Desktop\\图片\\2.jpg");
          //   string dt = System.DateTime.Now.ToString();
           //  MessageBox.Show(dt);
            // progress_pas.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
@@ -74,10 +74,7 @@ namespace 图书管理系统
            // MessageBox.Show(flag.ToString());
 
 
-            flag = 1;
-
-
-
+           // flag = 1;
 
             if (flag == 1)
             {
@@ -144,9 +141,6 @@ namespace 图书管理系统
             else user_flag = 1;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

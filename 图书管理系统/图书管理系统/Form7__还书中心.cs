@@ -24,6 +24,7 @@ namespace 图书管理系统
             this.listView1.Columns.Add("借阅日期", 150, HorizontalAlignment.Left);
             this.listView1.Columns.Add("到期时间", 150, HorizontalAlignment.Left);
             this.listView1.Columns.Add("状态", 50, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("备注", 150, HorizontalAlignment.Left);
             this.listView1.View = System.Windows.Forms.View.Details;
 
 
@@ -35,7 +36,7 @@ namespace 图书管理系统
 
             //多条件查询
             string state = "未还";
-            SqlCommand MyCommand = new SqlCommand("SELECT 书籍序列号,书名,作者,出版社,借书日期,到期日期,状态 FROM Rent_books where 账号='" + Form1.ID + "'and 状态='" + state + "'", conn); //定义一个数据库操作指令
+            SqlCommand MyCommand = new SqlCommand("SELECT 书籍序列号,书名,作者,出版社,借书日期,到期日期,状态,备注 FROM Rent_books where 账号='" + Form1.ID + "'and 状态='" + state + "'", conn); //定义一个数据库操作指令
             SqlDataAdapter SelectAdapter = new SqlDataAdapter();//定义一个数据适配器
             SelectAdapter.SelectCommand = MyCommand;//定义数据适配器的操作指令
             DataSet MyDataSet = new DataSet();//定义一个数据集
@@ -107,7 +108,11 @@ namespace 图书管理系统
             if (listView1.SelectedItems.Count == 1)
             {//避免以后句子被触发两次
                 bookid = listView1.Items[a].SubItems[0].Text;
-                MessageBox.Show(bookid);
+                //MessageBox.Show(bookid);
+                string aa = listView1.Items[a].SubItems[7].Text;
+                if (aa != string.Empty)
+                    MessageBox.Show("该书已被管理员删除，请到前台手动还书!");
+
             }
         }
 
@@ -163,13 +168,14 @@ namespace 图书管理系统
 
 
                             int num = int.Parse(row[j].ToString().Trim()) + 1;
-                            MessageBox.Show("num   "+num);
+                            //MessageBox.Show("num   "+num);
                             
                             sql = "update Books set 库存量=@num  where 书籍序列号=@id;";
                             cmd = new SqlCommand(sql, conn);
                             cmd.Parameters.AddWithValue("@num", num);
                             cmd.Parameters.AddWithValue("@id", bookid);
                             cmd.ExecuteNonQuery();
+                        MessageBox.Show("成功还书");
                            
 
                         }
@@ -177,6 +183,8 @@ namespace 图书管理系统
             
                 }
             }
+            listView1.Items.Clear();
+            init();
         }
 
         private void button2_Click_1(object sender, EventArgs e)

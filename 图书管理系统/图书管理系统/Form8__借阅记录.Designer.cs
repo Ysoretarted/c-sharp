@@ -37,7 +37,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 31);
+            this.label1.Location = new System.Drawing.Point(518, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("宋体", 12F);
-            this.label2.Location = new System.Drawing.Point(361, 27);
+            this.label2.Location = new System.Drawing.Point(578, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 1;
@@ -57,16 +57,16 @@
             // listView1
             // 
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(13, 59);
+            this.listView1.Location = new System.Drawing.Point(2, 59);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(550, 307);
+            this.listView1.Size = new System.Drawing.Size(750, 318);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(235, 395);
+            this.button1.Location = new System.Drawing.Point(303, 409);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 461);
+            this.ClientSize = new System.Drawing.Size(752, 464);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);

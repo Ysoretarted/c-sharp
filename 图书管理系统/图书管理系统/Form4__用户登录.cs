@@ -28,7 +28,7 @@ namespace 图书管理系统
         private void Form4__用户登录_Load(object sender, EventArgs e)
         {
             登录用户.Text = Form1.ID;
-            MessageBox.Show(Form1.ID);
+            //MessageBox.Show(Form1.ID);
         }
 
         private void Form4__用户登录_FormClosed(object sender, FormClosedEventArgs e)
@@ -49,7 +49,8 @@ namespace 图书管理系统
 
         private void 个人中心ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form10_修改信息 f = new Form10_修改信息(登录用户.Text.ToString(), this);
+            
+            Form10_修改信息 f = new Form10_修改信息(this,null);
             f.Show();
             this.Hide();
            // MessageBox.Show("个人中心");
@@ -57,7 +58,8 @@ namespace 图书管理系统
 
         private void 修改密码ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form9__修改密码 f9 = new Form9__修改密码(登录用户.Text.ToString(), this);
+            Form5__管理员登入 f5 = null;
+            Form9__修改密码 f9 = new Form9__修改密码(this,f5);
             f9.Show();
             this.Hide();
           //  MessageBox.Show("修改密码");
@@ -67,7 +69,7 @@ namespace 图书管理系统
         {
             lastform.Show();
             this.Hide();
-            MessageBox.Show("退出");
+            //MessageBox.Show("退出");
         }
 
         private void 登录用户_MouseEnter(object sender, EventArgs e)

@@ -71,6 +71,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(180, 145);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 3;
             // 
@@ -131,7 +132,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 307);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(338, 326);
             this.Controls.Add(this.注册);
             this.Controls.Add(this.登录);
             this.Controls.Add(this.管理员);
@@ -142,7 +144,6 @@
             this.Controls.Add(this.账号);
             this.Name = "Form1";
             this.Text = "图书管理系统--请登录";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

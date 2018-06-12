@@ -12,12 +12,16 @@ namespace 图书管理系统
     public partial class Form10_修改信息 : Form
     {
        // string user = null;
-        Form4__用户登录 lastform;
-        public Form10_修改信息(string a,Form4__用户登录 f4)
+        Form4__用户登录 lastform=null;
+        Form5__管理员登入 last=null;
+       // int flag = 0;
+        public Form10_修改信息(Form4__用户登录 f4,Form5__管理员登入 f5)
         {
             InitializeComponent();
             //user = a;
-            lastform = f4;
+            if (f4 != null)
+                lastform = f4;
+            else last = f5;
         }
 
         private void Form10_修改信息_Load(object sender, EventArgs e)
@@ -32,7 +36,10 @@ namespace 图书管理系统
 
         private void button2_Click(object sender, EventArgs e)
         {
-            lastform.Show();
+            if (lastform != null)
+                lastform.Show();
+            else if (last != null)
+                last.Show();
             this.Hide();
         }
 
@@ -59,7 +66,7 @@ namespace 图书管理系统
                 cmd1.Parameters.AddWithValue("@bookid", Form1.ID);
                 cmd1.ExecuteNonQuery();
                 Form1.ID = textBox1.Text.ToString();
-                MessageBox.Show(Form1.ID);
+                //MessageBox.Show(Form1.ID);
                 conn.Close();
             }
         }

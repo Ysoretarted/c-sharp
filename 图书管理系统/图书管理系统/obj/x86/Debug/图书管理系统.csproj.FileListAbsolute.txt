@@ -15,3 +15,7 @@ C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书
 C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form8__借阅记录.resources
 C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form9__修改密码.resources
 C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form10_修改信息.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form11__管理员修改学生密码.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form12__修改图书信息.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form13__新增图书.resources
+C:\Users\ZCZ\Desktop\期末复习资料\c#课程设计\图书管理系统\图书管理系统\obj\x86\Debug\图书管理系统.Form14__删除图书.resources

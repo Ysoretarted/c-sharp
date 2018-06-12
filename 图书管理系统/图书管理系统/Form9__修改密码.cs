@@ -14,7 +14,7 @@ namespace 图书管理系统
     {
         string password=null;
        // string user = null;
-        Form4__用户登录 lastform;
+        
         private enum Strength
         {
             Invalid = 0, //无效密码
@@ -86,13 +86,16 @@ namespace 图书管理系统
                     password = row[j].ToString().Trim();
                 }
             }
-            MessageBox.Show(password);
+            //MessageBox.Show(password);
         }
-        public Form9__修改密码(string a,Form4__用户登录 f4)
+        Form4__用户登录 lastform=null;
+        Form5__管理员登入 last=null;
+        public Form9__修改密码(Form4__用户登录 f4,Form5__管理员登入 f5)
         {
             InitializeComponent();
             //user=a;
             lastform = f4;
+            last = f5;
             init_user();
         }
 
@@ -126,7 +129,10 @@ namespace 图书管理系统
 
         private void button2_Click(object sender, EventArgs e)
         {
-            lastform.Show();
+            if (lastform != null)
+                lastform.Show();
+            else if (last != null)
+                last.Show();
             this.Hide();
         }
 
